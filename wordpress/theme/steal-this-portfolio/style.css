@@ -45,13 +45,13 @@ body{ background:var(--beige); color:var(--ink); font-family:var(--jb-sans); -we
 .jb-all a:hover{opacity:1; text-decoration:underline; text-underline-offset:3px}
 
 /* hero: writing + photo */
-.jb-hero{display:grid; grid-template-columns:minmax(0,1fr) 360px; gap:40px; align-items:start; padding:30px 0 0}
-.jb-writing{display:flex; flex-direction:column}
-.jb-cards{display:flex; flex-direction:column; gap:20px}
+.jb-hero{display:grid; grid-template-columns:minmax(0,1fr) 360px; gap:40px; align-items:stretch; padding:30px 0 0}
+.jb-writing{display:flex; flex-direction:column; min-height:100%}
+.jb-cards{display:flex; flex-direction:column; gap:20px; flex:1}
 
 /* writing pills — hard shadow */
 .jb-post{
-  position:relative; isolation:isolate; overflow:hidden; border-radius:999px; min-height:0;
+  position:relative; isolation:isolate; overflow:hidden; border-radius:999px; flex:1; min-height:0;
   text-decoration:none; background:#fff; color:var(--ink); border:1px solid #000; box-shadow:5px 5px 0 0 #000;
   padding:15px 26px; display:flex; flex-direction:row; align-items:center; gap:14px;
   transition:transform .2s cubic-bezier(.3,.7,.3,1), background .2s cubic-bezier(.3,.7,.3,1), color .18s ease, border-color .18s ease, box-shadow .2s cubic-bezier(.3,.7,.3,1);
