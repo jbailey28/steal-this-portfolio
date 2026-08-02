@@ -12,6 +12,10 @@ There are two ways to use it. Pick the one that fits you.
 
 Plain HTML, CSS, and JavaScript. Nothing to install. You edit **one file** and deploy for free. Most people finish in under 30 minutes.
 
+### Don't want to touch code? Let the AI do it (start here)
+Open [this folder](https://github.com/jbailey28/steal-this-portfolio) in [Claude Code](https://claude.com/claude-code) and say **"make this mine."** It reads [`CLAUDE.md`](CLAUDE.md), asks you a few questions, and edits `site.config.js` for you. This is how I actually build — it felt right to hand it over the same way.
+
+### Want to do it by hand?
 **New to this? Follow [`WALKTHROUGH.md`](WALKTHROUGH.md)** — a hand-held, step-by-step version with a checkpoint at every stage. The short version is below.
 
 **1. Get the files**
@@ -29,9 +33,6 @@ Open `index.html` in your browser. That's it — no server needed. (If your post
 - **Vercel:** import your forked repo at [vercel.com/new](https://vercel.com/new). No settings to change.
 
 Point your own domain at it whenever you're ready.
-
-### Don't want to touch code? Let the AI do it.
-Open this folder in [Claude Code](https://claude.com/claude-code) and say **"make this mine."** It reads [`CLAUDE.md`](CLAUDE.md), asks you a few questions, and edits `site.config.js` for you. This is how I actually build — it felt right to hand it over the same way.
 
 ---
 
