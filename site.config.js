@@ -19,15 +19,31 @@ window.SITE = {
   photoAlt: "Jessyka Bailey",
 
   /* ---- the Style Kit, as code -------------------------------------------
-     These are the exact options from the original site. Change the hex values
-     to re-skin the whole thing. Text auto-sits readably on your accent color. */
+     Open style-kit.html to pick a look visually, then set it here. Every option
+     below maps 1:1 to the Style Kit. Named values (or a "#hex") both work. */
   theme: {
-    accent:     "#9FE500",  // hover color + the "live" project card
-    onAccent:   "#111111",  // text that sits on top of the accent
-    ink:        "#1F1F1F",  // main text color
-    pageBg:     "#F3EBDD",  // page background (beige)
-    projectsBg: "#1F1F1F",  // the projects strip (black)
-    font:       "'Geist', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+    // Backgrounds — white | black | beige | rose  (or a #hex)
+    pageBg:     "beige",   // page (header + inner pages)
+    writingBg:  "beige",   // the Writing section
+    projectsBg: "black",   // the Projects section
+    footerBg:   "beige",   // the footer
+
+    // Accents — lime | rose | purple | orange | black  (or a #hex)
+    writingAccent:  "lime",   // pill hover color
+    projectsAccent: "lime",   // the filled "live" project card
+
+    // Typography — sans (Geist) | serif (Lora) | rounded (Nunito)
+    font: "sans",
+
+    // Lines — "line" or "none"
+    headerBorder:    "line",
+    sectionDividers: "none",
+    footerBorder:    "none",
+
+    // Effects
+    cardShadow: "hard",    // none | soft | hard   (writing pills)
+    photoStyle: "border",  // none | border | shadow
+    dissolve:   "off",     // on | off  (click-to-dissolve on project cards)
   },
 
   /* ---- footer / social links (optional) ---------------------------------- */
