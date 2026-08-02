@@ -4,6 +4,9 @@ This is my personal site, [jessykabailey.com](https://jessykabailey.com), packag
 
 It's free. Fork it, keep it, sell nothing back to me. I'd just ask that you make it your own rather than leave my name on it.
 
+> ### 👉 New here? Start with the [visual how-to](https://jbailey28.github.io/steal-this-portfolio/how-to.html)
+> The 30-second version: **fork it → open the folder in [Claude Code](https://claude.com/claude-code) → say “make this mine.”** That's it.
+
 There are two ways to use it. Pick the one that fits you.
 
 ---
