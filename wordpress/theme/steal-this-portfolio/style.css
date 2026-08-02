@@ -45,10 +45,9 @@ body{ background:var(--beige); color:var(--ink); font-family:var(--jb-sans); -we
 .jb-all a:hover{opacity:1; text-decoration:underline; text-underline-offset:3px}
 
 /* hero: writing + photo */
-.jb-hero{display:grid; grid-template-columns:minmax(0,1fr) 360px; gap:40px; align-items:stretch; padding:30px 0 0}
+.jb-hero{display:grid; grid-template-columns:minmax(0,1fr) 360px; gap:40px; align-items:start; padding:30px 0 0}
 .jb-writing{display:flex; flex-direction:column}
-/* pills spread down the column so the last one sits flush with the bottom of the photo */
-.jb-cards{display:flex; flex-direction:column; gap:20px; flex:1; justify-content:space-between}
+.jb-cards{display:flex; flex-direction:column; gap:20px}
 
 /* writing pills — hard shadow */
 .jb-post{
