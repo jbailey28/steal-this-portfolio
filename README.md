@@ -12,6 +12,8 @@ There are two ways to use it. Pick the one that fits you.
 
 Plain HTML, CSS, and JavaScript. Nothing to install. You edit **one file** and deploy for free. Most people finish in under 30 minutes.
 
+**New to this? Follow [`WALKTHROUGH.md`](WALKTHROUGH.md)** — a hand-held, step-by-step version with a checkpoint at every stage. The short version is below.
+
 **1. Get the files**
 - Click **Fork** (top right) to copy this repo to your own GitHub, or download it as a ZIP.
 
