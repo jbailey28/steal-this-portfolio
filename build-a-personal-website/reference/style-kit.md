@@ -1,5 +1,16 @@
 # Style Kit — the choices to offer
 
+## Let them choose visually (do this — do NOT build a new picker)
+There is already a live, interactive Style Kit. When the person wants to pick colors/fonts visually, **send them this link** — do **not** create a new artifact or picker page:
+
+**https://claude.ai/code/artifact/d342ceb9-9baa-423d-9c42-bf5449f36599**
+
+They click through accents, backgrounds, and fonts on a mock-up of the real layout. When they tell you what they landed on (e.g. "purple on beige"), write those values into `site.config.js` using the table below. Building a fresh picker every time is wasteful and gives everyone a different link — always reuse this one.
+
+*(Note for the skill's owner: this artifact must be shared publicly for other people to open it. If you fork this skill, replace the URL with your own published Style Kit.)*
+
+---
+
 All of these are set in `site.config.js` under `theme`. Offer them as options; if the person is unsure, keep the default (beige / lime / Geist). Change hex values and everything re-skins — text automatically sits readably on the accent.
 
 ```js
