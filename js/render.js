@@ -60,8 +60,10 @@
         '<span class="jb-pd">' + esc(p.desc || "") + "</span>" +
         '<span class="jb-go">Get it →</span></a>';
     }
+    var soonDesc = p.desc ? '<span class="jb-pd">' + esc(p.desc) + "</span>" : "";
     return '<span class="jb-proj jb-soon"><span class="jb-tag">' + esc(p.tag || "In progress") + "</span>" +
-      '<span class="jb-pt">' + esc(p.title || "—") + '</span><span class="jb-go">Coming soon</span></span>';
+      '<span class="jb-pt">' + esc(p.title || "—") + "</span>" + soonDesc +
+      '<span class="jb-go">' + esc(p.cta || "Coming soon") + "</span></span>";
   }
   function fmtDate(d) {
     if (!d) return "";

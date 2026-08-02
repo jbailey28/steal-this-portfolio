@@ -88,6 +88,56 @@ How do people create opportunities when a traditional path does not exist? How c
 
 Hello, and welcome to the journey.`,
     },
+
+    // ---- Example posts below. Replace or delete them as you write your own. ----
+    {
+      slug:   "what-im-working-on",
+      title:  "What I'm working on right now",
+      date:   "2026-07-20",
+      author: "Jessyka Bailey",
+      tldr:   "A short, honest update on what's currently on my desk — no grand thesis, just work in motion.",
+      body: `The posts that keep a site feeling alive are usually the simplest ones: a quick note on what you're actually doing right now.
+
+Here's the kind of thing that fits:
+
+- **A project** you're building, and what stage it's at
+- **A question** you're trying to answer
+- **Something** you're reading or learning from
+
+A few paragraphs and a short list is plenty. The point is to show your thinking in motion, not to be polished.
+
+*This is an example post — replace it with your own in \`site.config.js\`.*`,
+    },
+    {
+      slug:   "something-i-learned",
+      title:  "Something I learned this week",
+      date:   "2026-07-10",
+      author: "Jessyka Bailey",
+      tldr:   "One idea that changed how I think about the work — written down while it's still fresh.",
+      body: `Writing down what you learn is how you actually keep it. It doesn't have to be long.
+
+## The idea
+
+Pick one thing that shifted your thinking this week and explain it plainly — as if to a friend who wasn't there.
+
+## Why it matters
+
+Then say why it changes what you'll do next. That second part is what makes it worth reading.
+
+*This is an example post — replace it with your own in \`site.config.js\`.*`,
+    },
+    {
+      slug:   "how-this-site-is-built",
+      title:  "A quick note on how this site is built",
+      date:   "2026-07-01",
+      author: "Jessyka Bailey",
+      tldr:   "This whole site is a free, open template you can fork and make your own in about thirty minutes.",
+      body: `This site runs on a small open-source template called [Steal This Portfolio](https://github.com/jbailey28/steal-this-portfolio). No page builder, no monthly fee — just a few files you edit and deploy for free.
+
+If you like the look, you can have your own version running today. Fork it, change one file, and it's yours.
+
+*This is an example post — replace it with your own in \`site.config.js\`.*`,
+    },
   ],
 
   /* ---- projects ----------------------------------------------------------
@@ -104,9 +154,10 @@ Hello, and welcome to the journey.`,
       url:    "https://github.com/jbailey28/steal-this-portfolio",
       repo:   "jbailey28/steal-this-portfolio", // shows a live fork count on the card
     },
-    { title: "—", status: "soon", tag: "In progress" },
-    { title: "—", status: "soon", tag: "In progress" },
-    { title: "—", status: "soon", tag: "In progress" },
+    // ---- Example projects. Swap in your own, or delete down to the ones you have. ----
+    { status: "soon", tag: "In progress", title: "Newsletter", desc: "A short note on what I'm building and learning, sent when I have something worth sharing." },
+    { status: "soon", tag: "In progress", title: "Experiments", desc: "Small tools and prototypes I'm testing — some work, some don't. That's the point." },
+    { status: "soon", tag: "In progress", title: "Talks & workshops", desc: "Sharing what I've learned about sales, AI, and building things that actually hold up." },
   ],
 
 };
