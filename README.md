@@ -26,6 +26,8 @@ There's also a reusable **Claude skill** in [`build-a-personal-website/`](build-
 **2. Make it yours — edit `site.config.js`**
 Open `site.config.js`. It's the whole site: your name, your photo, your colors, your posts, your projects. It's commented line by line. Change the values, save.
 
+*Picking colors:* double-click **`style-kit.html`** to try accent + background combos on a live preview of your layout, then copy the theme into `site.config.js`.
+
 **3. Preview it**
 Open `index.html` in your browser. That's it — no server needed. (If your posts don't load when opening the file directly, run a tiny local server instead: `python3 -m http.server` in this folder, then visit `http://localhost:8000`.)
 

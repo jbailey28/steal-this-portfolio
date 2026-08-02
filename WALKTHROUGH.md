@@ -31,7 +31,7 @@ Open `site.config.js`. Make these changes, saving and refreshing `index.html` af
 **2.1 — Your name.** Find `name:` near the top. Change `"Jessyka Bailey"` to your name. Change `tagline:` to a short line about you.
 > ✅ **Check:** Refresh `index.html`. The header (top-left) and the browser tab now show your name.
 
-**2.2 — Your color.** Find the `theme:` section. Change `accent:` from `"#9FE500"` to any hex color (try `"#4600E5"`).
+**2.2 — Your color.** Not sure what looks good? **Double-click `style-kit.html`** — click through accent + background combos on a live preview of your layout, then hit **Copy theme** and paste it over the `theme:` block in `site.config.js`. (Or just change `accent:` from `"#9FE500"` to any hex color, e.g. `"#4600E5"`.)
 > ✅ **Check:** Refresh, then hover a Writing pill — it fills with your new color. The live project card uses it too.
 
 **2.3 — Your photo.** Put an image in the `assets` folder. Change `photo:` to point at it, e.g. `"assets/me.jpg"`.

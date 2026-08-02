@@ -37,7 +37,7 @@ Start with the essentials:
 - Do they already have writing or projects, or should you keep the examples as a starting scaffold?
 
 **3. Set identity + theme in `site.config.js`.**
-Fill in `name`, `tagline`, `photo`, `socials`. For colors and fonts, if the person wants to choose visually, **send them to the existing live Style Kit** (link in `reference/style-kit.md`) — **do NOT build a new picker or artifact for this**; reuse the one that's already published. When they tell you their pick, write the values into the config. Text auto-sits readably on whatever accent they choose. If unsure, keep the default beige/lime/Geist.
+Fill in `name`, `tagline`, `photo`, `socials`. For colors, if the person wants to choose visually, **open the `style-kit.html` that ships with the template** (see `reference/style-kit.md`) — **do NOT build a new picker or artifact**. They click an accent + background on a live preview, then copy the result or tell you their pick, and you write it into the config. Text auto-sits readably on whatever accent they choose. If unsure, keep the default beige/lime/Geist.
 
 **4. Content.**
 - **Posts:** `posts` is an array; each has `slug`, `title`, `date` (`YYYY-MM-DD`), `author`, an optional `tldr` (the summary box), and a Markdown `body`. Offer to help them write one or two starter posts — follow `reference/writing-voice.md` (plain, honest, no hype). If they're not ready, leave the example posts; they read as replaceable templates. **The layout looks best with 2–4 posts** (pills grow to fill, so a single post stretches tall).
