@@ -15,6 +15,8 @@ Plain HTML, CSS, and JavaScript. Nothing to install. You edit **one file** and d
 ### Don't want to touch code? Let the AI do it (start here)
 Open [this folder](https://github.com/jbailey28/steal-this-portfolio) in [Claude Code](https://claude.com/claude-code) and say **"make this mine."** It reads [`CLAUDE.md`](CLAUDE.md), asks you a few questions, and edits `site.config.js` for you. This is how I actually build — it felt right to hand it over the same way.
 
+There's also a reusable **Claude skill** in [`build-a-personal-website/`](build-a-personal-website/) that can build a site like this with anyone, from scratch — the whole workflow, design system, and writing voice, packaged up. Copy that folder into `~/.claude/skills/` and Claude Code will offer it whenever someone wants to build a personal website.
+
 ### Want to do it by hand?
 **New to this? Follow [`WALKTHROUGH.md`](WALKTHROUGH.md)** — a hand-held, step-by-step version with a checkpoint at every stage. The short version is below.
 
