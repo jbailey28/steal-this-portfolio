@@ -21,7 +21,7 @@ body{ background:var(--beige); color:var(--ink); font-family:var(--jb-sans); -we
 #jb *{box-sizing:border-box}
 .jb-header *, .jb-foot *, .jb-page *{box-sizing:border-box}
 :where(#jb) a, :where(.jb-header) a, :where(.jb-foot) a{color:inherit}
-.jb-wrap{max-width:1200px; margin:0 auto; padding:0 28px}
+.jb-wrap{max-width:1080px; margin:0 auto; padding:0 28px}
 
 /* header (sits on the beige page) */
 .jb-header{padding:18px 0; background:transparent; color:var(--ink); border-bottom:1.5px solid #000}
@@ -45,7 +45,7 @@ body{ background:var(--beige); color:var(--ink); font-family:var(--jb-sans); -we
 .jb-all a:hover{opacity:1; text-decoration:underline; text-underline-offset:3px}
 
 /* hero: writing + photo */
-.jb-hero{display:grid; grid-template-columns:minmax(0,1fr) 400px; gap:48px; align-items:stretch; padding:30px 0 0}
+.jb-hero{display:grid; grid-template-columns:minmax(0,1fr) 360px; gap:40px; align-items:stretch; padding:30px 0 0}
 .jb-writing{display:flex; flex-direction:column}
 /* pills spread down the column so the last one sits flush with the bottom of the photo */
 .jb-cards{display:flex; flex-direction:column; gap:20px; flex:1; justify-content:space-between}
@@ -114,7 +114,7 @@ body{ background:var(--beige); color:var(--ink); font-family:var(--jb-sans); -we
 .jb-empty{opacity:.6}
 /* projects page uses the homepage-width container so the "Projects" title and the grid
    share a left edge; grid stays the homepage's plain 4-col .jb-projgrid → cards match 244px */
-.jb-page.jb-projpage{max-width:1200px}
+.jb-page.jb-projpage{max-width:1080px}
 .jb-projgrid-page{margin-top:0}
 .jb-projgrid-page .jb-proj{border:1.5px solid #1F1F1F}
 @media (max-width:560px){ .jb-page{padding:36px 18px 60px} }
