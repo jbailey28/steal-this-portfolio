@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" role="img" aria-label="Add your photo">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ECE3D2"/>
+      <stop offset="1" stop-color="#DFD4BE"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="800" fill="url(#bg)"/>
+  <g fill="#C7BCA3">
+    <circle cx="300" cy="330" r="96"/>
+    <path d="M150 640c0-96 67-168 150-168s150 72 150 168v40H150z"/>
+  </g>
+  <text x="300" y="742" text-anchor="middle" font-family="Geist, Helvetica, Arial, sans-serif"
+        font-size="26" letter-spacing="2" fill="#8C826F" opacity="0.75">ADD YOUR PHOTO</text>
+</svg>

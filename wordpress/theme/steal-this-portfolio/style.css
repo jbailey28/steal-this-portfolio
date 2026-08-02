@@ -1,0 +1,158 @@
+/*
+Theme Name: Steal This Portfolio
+Description: A clean, minimal personal-site theme, ported from jessykabailey.com. Child of Twenty Twenty-Five. Fork it and make it yours.
+Theme URI: https://github.com/jbailey28/steal-this-portfolio
+Author: Jessyka Bailey
+Template: twentytwentyfive
+Version: 1.0.0
+Text Domain: jessyka-blog
+*/
+
+@font-face{font-family:"Geist";src:url('assets/geist-sans.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap}
+
+/* ============================ Jessyka Bailey — locked design ============================ */
+:root{
+  --beige:#F3EBDD; --ink:#1F1F1F; --lime:#9FE500; --on-lime:#111111;
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  --jb-sans:"Geist","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+body{ background:var(--beige); color:var(--ink); font-family:var(--jb-sans); -webkit-font-smoothing:antialiased; }
+#jb{ background:var(--beige); color:var(--ink); }
+#jb *{box-sizing:border-box}
+.jb-header *, .jb-foot *, .jb-page *{box-sizing:border-box}
+:where(#jb) a, :where(.jb-header) a, :where(.jb-foot) a{color:inherit}
+.jb-wrap{max-width:1080px; margin:0 auto; padding:0 28px}
+
+/* header (sits on the beige page) */
+.jb-header{padding:18px 0; background:transparent; color:var(--ink); border-bottom:1.5px solid #000}
+.jb-topbar{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap}
+.jb-brand{font-weight:600; font-size:1rem; letter-spacing:-.01em; text-decoration:none}
+.jb-brand:hover{opacity:.65}
+.jb-nav{display:flex; gap:20px; flex-wrap:wrap}
+.jb-nav a{font-size:.9rem; text-decoration:none; opacity:.9}
+.jb-nav a:hover{opacity:1; text-decoration:underline; text-underline-offset:3px}
+.jb-nav a[aria-current]{opacity:.6}
+
+/* sections */
+.jb-sec{width:100%}
+.jb-sec1{background:var(--beige); color:var(--ink); padding:26px 0 56px}
+.jb-sec2{background:var(--ink); color:var(--beige); padding:56px 0 64px}
+
+.jb-lab{font-size:1.05rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; margin:0}
+.jb-whead{display:flex; align-items:baseline; justify-content:space-between; margin-bottom:16px}
+.jb-all{font-size:.82rem}
+.jb-all a{text-decoration:none; opacity:.85}
+.jb-all a:hover{opacity:1; text-decoration:underline; text-underline-offset:3px}
+
+/* hero: writing + photo */
+.jb-hero{display:grid; grid-template-columns:minmax(0,1fr) 360px; gap:40px; align-items:start; padding:30px 0 0}
+.jb-writing{display:flex; flex-direction:column}
+.jb-cards{display:flex; flex-direction:column; gap:20px}
+
+/* writing pills — hard shadow */
+.jb-post{
+  position:relative; isolation:isolate; overflow:hidden; border-radius:999px; min-height:0;
+  text-decoration:none; background:#fff; color:var(--ink); border:1px solid #000; box-shadow:5px 5px 0 0 #000;
+  padding:15px 26px; display:flex; flex-direction:row; align-items:center; gap:14px;
+  transition:transform .2s cubic-bezier(.3,.7,.3,1), background .2s cubic-bezier(.3,.7,.3,1), color .18s ease, border-color .18s ease, box-shadow .2s cubic-bezier(.3,.7,.3,1);
+}
+.jb-post::before{content:""; position:absolute; inset:0; background:var(--grain); background-size:150px; mix-blend-mode:soft-light; opacity:0; z-index:0; pointer-events:none; transition:opacity .5s cubic-bezier(.22,1,.36,1)}
+.jb-post>span{position:relative; z-index:1}
+.jb-t{flex:1; font-size:1.08rem; font-weight:600; letter-spacing:-.01em; line-height:1.18}
+.jb-arw{font-size:1.15rem; transition:transform .5s cubic-bezier(.22,1,.36,1)}
+.jb-post:hover, .jb-post:focus-visible{
+  background:var(--lime); color:var(--on-lime); border-color:#1F1F1F;
+  transform:scale(1.02) translateY(-2px); box-shadow:7px 7px 0 0 #000; outline:none;
+  transition:transform .85s cubic-bezier(.22,1,.36,1), background .85s cubic-bezier(.22,1,.36,1), color .75s cubic-bezier(.22,1,.36,1), border-color .75s cubic-bezier(.22,1,.36,1), box-shadow .9s cubic-bezier(.22,1,.36,1);
+}
+.jb-post:hover::before, .jb-post:focus-visible::before{opacity:.6}
+.jb-post:hover .jb-arw{transform:translateX(4px)}
+
+/* photo — border */
+.jb-photo{overflow:hidden; border-radius:26px; aspect-ratio:3/4; border:2px solid #000; margin:0}
+.jb-photo img{width:100%; height:100%; object-fit:cover; object-position:center 40%; display:block}
+
+/* projects (on the black section) */
+.jb-projgrid{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; margin-top:16px}
+.jb-proj{
+  position:relative; isolation:isolate; overflow:hidden; aspect-ratio:1/1; min-height:0; border-radius:28px;
+  border:1px solid currentColor; text-decoration:none; color:inherit; padding:18px;
+  display:flex; flex-direction:column; justify-content:space-between;
+  transition:transform .2s cubic-bezier(.3,.7,.3,1), box-shadow .2s cubic-bezier(.3,.7,.3,1);
+}
+.jb-proj>*{position:relative; z-index:1}
+.jb-proj:hover{transform:translateY(-6px) scale(1.02); box-shadow:0 22px 38px -16px rgba(0,0,0,.42); transition:transform .85s cubic-bezier(.22,1,.36,1), box-shadow .85s cubic-bezier(.22,1,.36,1)}
+.jb-ptop{display:flex; align-items:center; justify-content:space-between; gap:8px}
+.jb-tag{font-size:10px; letter-spacing:.14em; text-transform:uppercase; opacity:.75}
+.jb-count{font-size:10px; letter-spacing:.12em; text-transform:uppercase; opacity:.85; white-space:nowrap}
+.jb-pt{font-size:1.15rem; font-weight:700; letter-spacing:-.01em; line-height:1.12}
+.jb-pd{font-size:.82rem; line-height:1.4; opacity:.95; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden}
+.jb-go{font-size:11px; letter-spacing:.1em; text-transform:uppercase}
+.jb-proj.jb-live{background:var(--lime); border-color:var(--lime); color:var(--on-lime)}
+.jb-proj.jb-live::before{content:""; position:absolute; inset:0; background:var(--grain); background-size:160px; mix-blend-mode:soft-light; opacity:.5; z-index:0; pointer-events:none}
+.jb-proj.jb-soon{border-style:solid; opacity:.72}
+.jb-proj.jb-soon:hover{transform:translateY(-6px) scale(1.02); opacity:1; border-color:var(--lime); box-shadow:0 22px 38px -16px rgba(0,0,0,.28); transition:transform .85s cubic-bezier(.22,1,.36,1), box-shadow .85s cubic-bezier(.22,1,.36,1), opacity .4s ease, border-color .4s ease}
+
+/* footer */
+.jb-foot{background:var(--beige); color:var(--ink); text-align:center; padding:40px 0 50px}
+.jb-foot p{margin:0; font-size:.8rem; letter-spacing:.08em; opacity:.72}
+
+/* ---- inner pages: blog, single post, projects ---- */
+.jb-page{max-width:720px; margin:0 auto; padding:52px 28px 84px}
+.jb-page-title, .jb-page .wp-block-post-title{font-size:2.1rem; font-weight:700; letter-spacing:-.02em; line-height:1.15; margin:0 0 26px}
+.jb-page p, .jb-page li{font-size:1.06rem; line-height:1.7}
+.jb-page p{margin:0 0 1.25rem; max-width:66ch}
+.jb-page :where(p,li,h2,h3,blockquote) a{text-decoration:underline; text-underline-offset:3px}
+.jb-page h2{font-size:1.5rem; font-weight:700; letter-spacing:-.01em; margin:2.2rem 0 .8rem}
+.jb-page h3{font-size:1.2rem; font-weight:600; margin:1.6rem 0 .6rem}
+.jb-page ul, .jb-page ol{max-width:66ch; margin:0 0 1.25rem; padding-left:1.2em}
+.jb-page blockquote{max-width:66ch; border-left:3px solid var(--ink); padding-left:1em; margin:1.5rem 0; font-style:italic}
+.jb-page img{max-width:100%; height:auto; border-radius:14px}
+.jb-page-lede{font-family:var(--jb-sans); font-size:.9rem; letter-spacing:.14em; text-transform:uppercase; opacity:.55; margin:0 0 10px}
+.jb-bloglist{display:flex; flex-direction:column; gap:18px}
+.jb-empty{opacity:.6}
+/* projects page uses the homepage-width container so the "Projects" title and the grid
+   share a left edge; grid stays the homepage's plain 4-col .jb-projgrid → cards match 244px */
+.jb-page.jb-projpage{max-width:1080px}
+.jb-projgrid-page{margin-top:0}
+.jb-projgrid-page .jb-proj{border:1.5px solid #1F1F1F}
+@media (max-width:560px){ .jb-page{padding:36px 18px 60px} }
+
+/* ---- refined single-post (article) typography ---- */
+.jb-article{max-width:760px}
+.jb-article .wp-block-post-title{font-size:56px; line-height:1.06; letter-spacing:-.022em; font-weight:700; margin:0 0 16px; max-width:none}
+.jb-article .jb-meta{display:flex; align-items:center; flex-wrap:wrap; gap:10px; font-family:var(--jb-sans); font-size:13px; letter-spacing:.06em; text-transform:uppercase; opacity:.55; margin:0 0 34px}
+.jb-article .jb-meta time{font-variant-numeric:tabular-nums}
+.jb-article .jb-meta .jb-byline{font-weight:600}
+
+/* TL;DR summary — echoes an editorial lede without becoming a card; lime rule ties to the accent */
+.jb-article .jb-tldr{margin:0 0 44px; padding:4px 0 4px 20px; border-left:3px solid var(--lime)}
+.jb-article .jb-tldr-label{display:block; font-family:var(--jb-sans); font-size:12px; letter-spacing:.16em; text-transform:uppercase; font-weight:700; opacity:.5; margin:0 0 8px}
+.jb-article .jb-tldr p{font-size:18px; line-height:1.6; font-weight:500; max-width:66ch; margin:0}
+.jb-article .wp-block-post-content > p:first-of-type{font-size:24px; line-height:1.5; font-weight:500; max-width:700px; margin:0 0 30px}
+.jb-article p{font-size:19px; line-height:1.7; font-weight:400; max-width:66ch; margin:0 0 28px}
+.jb-article ul, .jb-article ol{font-size:19px; line-height:1.7; max-width:66ch; margin:0 0 28px}
+.jb-article h2{font-size:1.7rem; font-weight:700; letter-spacing:-.01em; margin:2.4rem 0 .8rem}
+.jb-article h3{font-size:1.3rem; font-weight:600; margin:1.9rem 0 .6rem}
+.jb-article blockquote{max-width:66ch; margin:1.9rem 0}
+@media (max-width:820px){ .jb-article .wp-block-post-title{font-size:44px} }
+@media (max-width:520px){
+  .jb-article .wp-block-post-title{font-size:36px}
+  .jb-article .wp-block-post-content > p:first-of-type{font-size:21px}
+  .jb-article p, .jb-article ul, .jb-article ol{font-size:17px}
+}
+
+/* responsive */
+@media (max-width:760px){
+  .jb-hero{grid-template-columns:1fr; gap:22px}
+  .jb-photo{order:-1; aspect-ratio:4/5}
+  .jb-projgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:560px){
+  .jb-wrap{padding:0 18px}
+  .jb-header{margin:4px}
+  .jb-sec1{padding:20px 0 40px}
+  .jb-sec2{padding:40px 0 46px}
+}
+@media (max-width:440px){ .jb-projgrid{grid-template-columns:1fr} }
+@media (prefers-reduced-motion:reduce){ #jb *{transition:none !important} }
