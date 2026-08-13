@@ -130,9 +130,13 @@
     font-family:var(--uimono); width:400px; max-width:calc(100vw - 40px)}
   .chip-title{font-size:10px; letter-spacing:.24em; text-transform:uppercase; color:#a8a190; margin:-2px 0 -4px}
   .chip-group{font-size:10px; letter-spacing:.22em; text-transform:uppercase; color:#1F1F1F; padding-top:14px; border-top:1px solid #ece4d3; margin-bottom:-6px}
-  .chip-head{display:flex; align-items:center; justify-content:center; gap:9px; width:100%; background:transparent; border:0; cursor:pointer; font-family:var(--uimono); font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:#1F1F1F; padding:0}
+  /* .chip-head has to out-rank .chip button, which sets a transparent
+     background for every control in the panel. */
+  .chip .chip-head{display:flex; align-items:center; justify-content:center; gap:9px; width:100%; background:#faf8f3; border:1px solid #ece4d3; border-radius:100px; cursor:pointer; font-family:var(--uimono); font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:#1F1F1F; padding:11px 14px; min-height:44px}
+  .chip .chip-head:hover{background:#f3efe4; border-color:#ded8cb}
+  .chip .chip-head:focus-visible{outline:2px solid #1F1F1F; outline-offset:2px}
   .chip-head .chev{font-size:24px; line-height:1; transition:transform .25s ease}
-  .chip-body{display:flex; flex-direction:column; gap:16px; overflow:auto; max-height:calc(100vh - 132px)}
+  .chip-body{display:flex; flex-direction:column; gap:16px; overflow:auto; max-height:calc(100dvh - 132px); -webkit-overflow-scrolling:touch}
   .chip-export{display:flex; flex-direction:column; gap:9px; padding-top:14px; border-top:1px solid #ece4d3}
   .chip-export button{font-family:var(--uimono); font-size:12px; letter-spacing:.06em; color:#fff; background:#1F1F1F; border:0; cursor:pointer; padding:10px 0; border-radius:100px}
   .chip-export button:hover{background:#000}
@@ -163,6 +167,22 @@
   .chip .sw:focus-visible{outline:2px solid #1F1F1F; outline-offset:3px}
   .chip .grp.divider, .chip .grp.two{grid-template-columns:82px repeat(2,1fr)}
   .chip .grp.four{grid-template-columns:82px repeat(4,1fr)}
+
+  /* ---- the panel on a phone -------------------------------------------------
+     It exists to restyle the page, so it must not cover the page. Full width at
+     the bottom, never more than two thirds tall, and dvh rather than vh because
+     iOS counts the URL bar out of vh and pushes the top of a tall element off
+     the screen. */
+  @media (max-width:640px){
+    .chip{left:10px; right:10px; bottom:10px; width:auto; max-width:none;
+          padding:14px 16px; gap:12px; border-radius:22px}
+    .chip-body{max-height:58dvh}
+    .chip .chip-head{font-size:12px}
+    .chip .grp{grid-template-columns:74px repeat(3,1fr); column-gap:7px}
+    .chip .grp.divider, .chip .grp.two{grid-template-columns:74px repeat(2,1fr)}
+    .chip .grp.four{grid-template-columns:74px repeat(4,1fr)}
+    .chip .k{font-size:10px; letter-spacing:.08em}
+  }
 
   /* section divider line — always black */
   #app[data-divider="line"] .sec2{border-top:1.5px solid #000000}
@@ -340,7 +360,15 @@
   });
 
   const chip=document.querySelector(".chip"), head=document.querySelector(".chip-head");
-  head.addEventListener("click", ()=>{ const c=chip.classList.toggle("collapsed"); head.setAttribute("aria-expanded", String(!c)); });
+  const setOpen = open => {
+    chip.classList.toggle("collapsed", !open);
+    head.setAttribute("aria-expanded", String(open));
+  };
+  head.addEventListener("click", ()=> setOpen(chip.classList.contains("collapsed")));
+  // On a phone the panel would otherwise open on top of the page it is there to
+  // restyle, with nothing on screen that reads as a way out of it.
+  if (window.matchMedia("(max-width:640px)").matches) setOpen(false);
+  document.addEventListener("keydown", e => { if (e.key === "Escape") setOpen(false); });
 
   // Live "taken" counter from the GitHub repo's fork count.
   // (Blocked by CSP inside the claude.ai preview; runs on the real site.)
